@@ -1,0 +1,113 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.33.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 123 123, 123, LIC=03C6R-K4P14-SBKEJ-UJR4C-BNK0T-94A3X
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.33.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.38.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+D:\Users\Administrator\Desktop\stm32天气\STM32F103C8T6 cJSON解析心知天气API网络数据 20200522\STM32F103C8T6 cJSON解析心知天气API网络数据\USER\Usart.uvprojx
+Project File Date:  03/10/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Template'
+compiling main.c...
+main.c(99): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].location.id,item->valuestring,strlen(item->valuestring));
+main.c(99): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].location.id,item->valuestring,strlen(item->valuestring));
+main.c(104): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].location.name,item->valuestring,strlen(item->valuestring));
+main.c(104): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].location.name,item->valuestring,strlen(item->valuestring));
+main.c(109): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].location.country,item->valuestring,strlen(item->valuestring));
+main.c(109): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].location.country,item->valuestring,strlen(item->valuestring));
+main.c(114): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].location.path,item->valuestring,strlen(item->valuestring));
+main.c(114): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].location.path,item->valuestring,strlen(item->valuestring));
+main.c(119): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].location.timezone,item->valuestring,strlen(item->valuestring));
+main.c(119): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].location.timezone,item->valuestring,strlen(item->valuestring));
+main.c(124): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].location.timezone_offset,item->valuestring,strlen(item->valuestring));
+main.c(124): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].location.timezone_offset,item->valuestring,strlen(item->valuestring));
+main.c(134): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].now.text,item->valuestring,strlen(item->valuestring));
+main.c(134): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].now.text,item->valuestring,strlen(item->valuestring));
+main.c(139): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].now.code,item->valuestring,strlen(item->valuestring));
+main.c(139): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].now.code,item->valuestring,strlen(item->valuestring));
+main.c(144): warning:  #223-D: function "memcpy" declared implicitly
+  						memcpy(results[0].now.temperature,item->valuestring,strlen(item->valuestring));
+main.c(144): warning:  #223-D: function "strlen" declared implicitly
+  						memcpy(results[0].now.temperature,item->valuestring,strlen(item->valuestring));
+main.c(152): warning:  #223-D: function "memcpy" declared implicitly
+  					memcpy(results[0].last_update,item->valuestring,strlen(subobject->valuestring));
+main.c(152): warning:  #223-D: function "strlen" declared implicitly
+  					memcpy(results[0].last_update,item->valuestring,strlen(subobject->valuestring));
+main.c(187): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  			cJSON_WeatherParse(USART_RX_BUF, results);		//解析天气数据
+main.c(196): warning:  #223-D: function "memset" declared implicitly
+  			memset(dtOLEDBuf, 0, sizeof(dtOLEDBuf));
+main.c(166): warning:  #550-D: variable "uart1Len"  was set but never used
+  	u16 uart1Len;
+main.c: 23 warnings, 0 errors
+compiling oled.c...
+..\HARDWARE\OLED\oled.c(103): warning:  #223-D: function "OLED_DC_Set" declared implicitly
+  	  OLED_DC_Set();
+..\HARDWARE\OLED\oled.c(105): warning:  #223-D: function "OLED_DC_Clr" declared implicitly
+  	  OLED_DC_Clr();		  
+..\HARDWARE\OLED\oled.c(106): warning:  #223-D: function "OLED_CS_Clr" declared implicitly
+  	OLED_CS_Clr();
+..\HARDWARE\OLED\oled.c(121): warning:  #223-D: function "OLED_CS_Set" declared implicitly
+  	OLED_CS_Set();
+..\HARDWARE\OLED\oled.c: 4 warnings, 0 errors
+linking...
+..\OBJ\Template.axf: Error: L6218E: Undefined symbol OLED_CS_Clr (referred from oled.o).
+..\OBJ\Template.axf: Error: L6218E: Undefined symbol OLED_CS_Set (referred from oled.o).
+..\OBJ\Template.axf: Error: L6218E: Undefined symbol OLED_DC_Clr (referred from oled.o).
+..\OBJ\Template.axf: Error: L6218E: Undefined symbol OLED_DC_Set (referred from oled.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+"..\OBJ\Template.axf" - 4 Error(s), 27 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
