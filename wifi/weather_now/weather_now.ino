@@ -1,3 +1,5 @@
+
+
 /**********************************************************************
 项目名称/Project          : 零基础入门学用物联网
 程序名称/Program name     : weather_now（rev.002）
@@ -36,50 +38,53 @@ const char* reqUnit = "c";                      // 摄氏(c)/华氏(f)
 
 WeatherNow weatherNow;  // 建立WeatherNow对象用于获取心知天气信息
 
-void setup(){
-  Serial.begin(9600);          
-  Serial.println("");
 
-  connectWiFi();    // 连接wifi
+void setup(){
+  Serial.begin(115200);          
+
+
+ connectWiFi();    // 连接wifi
 
   // 配置心知天气请求信息
   weatherNow.config(reqUserKey, reqLocation, reqUnit);
 }
  
 void loop(){
+
+
+
   if(weatherNow.update()){  // 更新天气信息
     Serial.println(F("======Weahter Info======"));
     Serial.print("Server Response: ");
     Serial.println(weatherNow.getServerCode()); // 获取服务器响应码
-    Serial.print(F("Weather Now: "));
-    Serial.print(weatherNow.getWeatherText());  // 获取当前天气（字符串格式）
+   Serial.print(F("Weather Now: "));
+  Serial.print(weatherNow.getWeatherText());  // 获取当前天气（字符串格式）
     Serial.print(F(" "));
     Serial.println(weatherNow.getWeatherCode());// 获取当前天气（整数格式）
-    Serial.print(F("Temperature: "));
+   Serial.print(F("Temperature: "));
     Serial.println(weatherNow.getDegree());     // 获取当前温度数值
-    Serial.print(F("Last Update: "));
-    Serial.println(weatherNow.getLastUpdate()); // 获取服务器更新天气信息时间
+   Serial.print(F("Last Update: "));
+   Serial.println(weatherNow.getLastUpdate()); // 获取服务器更新天气信息时间
     Serial.println(F("========================"));     
+    Serial.println(Serial.read));
   } else {    // 更新失败
     Serial.println("Update Fail...");   
-    Serial.print("Server Response: ");          // 输出服务器响应状态码供用户查找问题
+   Serial.print("Server Response: ");          // 输出服务器响应状态码供用户查找问题
     Serial.println(weatherNow.getServerCode()); // 心知天气服务器错误代码说明可通过以下网址获取
   }                                             // https://docs.seniverse.com/api/start/error.html
-  
+ 
   delay(3000);
 }
 
-// 连接WiFi
 void connectWiFi(){
-  WiFi.begin(ssid, password);                  // 启动网络连接
-  Serial.print("Connecting to ");              // 串口监视器输出网络连接信息
+ WiFi.begin(ssid, password);                  // 启动网络连接
+ Serial.print("Connecting to ");              // 串口监视器输出网络连接信息
   Serial.print(ssid); Serial.println(" ...");  // 告知用户NodeMCU正在尝试WiFi连接
   
-  int i = 0;                                   // 这一段程序语句用于检查WiFi是否连接成功
-  while (WiFi.status() != WL_CONNECTED) {      // WiFi.status()函数的返回值是由NodeMCU的WiFi连接状态所决定的。 
+  int i = 0;                                   // 这一段程序语句用于检查WiFi是否连接成功  while (WiFi.status() != WL_CONNECTED) {      // WiFi.status()函数的返回值是由NodeMCU的WiFi连接状态所决定的。 
     delay(1000);                               // 如果WiFi连接成功则返回值为WL_CONNECTED                       
-    Serial.print(i++); Serial.print(' ');      // 此处通过While循环让NodeMCU每隔一秒钟检查一次WiFi.status()函数返回值
-  }                                            // 同时NodeMCU将通过串口监视器输出连接时长读秒。
+   Serial.print(i++); Serial.print(' ');      // 此处通过While循环让NodeMCU每隔一秒钟检查一次WiFi.status()函数返回值
+ }                                            // 同时NodeMCU将通过串口监视器输出连接时长读秒。
                                                // 这个读秒是通过变量i每隔一秒自加1来实现的。                                              
   Serial.println("");                          // WiFi连接成功后
   Serial.println("Connection established!");   // NodeMCU将通过串口监视器输出"连接成功"信息。
