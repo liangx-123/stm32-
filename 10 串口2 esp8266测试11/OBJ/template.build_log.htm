@@ -1,0 +1,56 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.20.0.39
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 123 123, 123, LIC=03C6R-K4P14-SBKEJ-UJR4C-BNK0T-94A3X
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.33.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.38.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+D:\Users\Administrator\Desktop\New folder\10 ´®¿Ú2 esp8266²âÊÔ\USER\template.uvproj
+Project File Date:  05/09/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling stm32f10x_it.c...
+compiling system_stm32f10x.c...
+compiling main.c...
+main.c(58): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+  	if(strstr(RX_buffer,p)!=NULL)
+main.c(58): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+  	if(strstr(RX_buffer,p)!=NULL)
+main.c(107): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+  Uart1SendStr(aa);	
+main.c: 3 warnings, 0 errors
+compiling misc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+assembling startup_stm32f10x_md.s...
+compiling stm32f10x_usart.c...
+compiling core_cm3.c...
+compiling delay.c...
+compiling usart.c...
+compiling led.c...
+linking...
+Program Size: Code=5168 RO-data=268 RW-data=168 ZI-data=2136  
+FromELF: creating hex file...
+"..\OBJ\template.axf" - 0 Error(s), 3 Warning(s).
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
