@@ -26,7 +26,9 @@ Project File Date:  05/10/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Target 1'
+Rebuild target 'Target 1'
+compiling system_stm32f10x.c...
+compiling stm32f10x_it.c...
 compiling main.c...
 ..\HARDWARE\OLED\oled.h(64): warning:  #1295-D: Deprecated declaration Picture - give arg types
   void Picture();
@@ -34,18 +36,41 @@ compiling main.c...
   void IIC_Start();
 ..\HARDWARE\OLED\oled.h(66): warning:  #1295-D: Deprecated declaration IIC_Stop - give arg types
   void IIC_Stop();
+..\HARDWARE\OLED\oled.h(70): warning:  #1295-D: Deprecated declaration KEY_Init - give arg types
+  void KEY_Init();
 ..\HARDWARE\OLED\oled.h(71): warning:  #1295-D: Deprecated declaration IIC_Wait_Ack - give arg types
   void IIC_Wait_Ack();
 ..\HARDWARE\OLED\oled.h(73): warning:  #1-D: last line of file ends without a newline
   	 
-main.c(125): warning:  #1-D: last line of file ends without a newline
-  	
 main.c: 6 warnings, 0 errors
+compiling usart.c...
+compiling delay.c...
+compiling oled.c...
+..\HARDWARE\OLED\oled.h(64): warning:  #1295-D: Deprecated declaration Picture - give arg types
+  void Picture();
+..\HARDWARE\OLED\oled.h(65): warning:  #1295-D: Deprecated declaration IIC_Start - give arg types
+  void IIC_Start();
+..\HARDWARE\OLED\oled.h(66): warning:  #1295-D: Deprecated declaration IIC_Stop - give arg types
+  void IIC_Stop();
+..\HARDWARE\OLED\oled.h(70): warning:  #1295-D: Deprecated declaration KEY_Init - give arg types
+  void KEY_Init();
+..\HARDWARE\OLED\oled.h(71): warning:  #1295-D: Deprecated declaration IIC_Wait_Ack - give arg types
+  void IIC_Wait_Ack();
+..\HARDWARE\OLED\oled.h(73): warning:  #1-D: last line of file ends without a newline
+  	 
+..\HARDWARE\OLED\oled.c: 6 warnings, 0 errors
+compiling sys.c...
+assembling startup_stm32f10x_hd.s...
+compiling core_cm3.c...
+compiling misc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_usart.c...
 linking...
-Program Size: Code=7012 RO-data=2408 RW-data=3100 ZI-data=1988  
+Program Size: Code=7272 RO-data=2408 RW-data=2076 ZI-data=3332  
 FromELF: creating hex file...
-"..\OBJ\OLED.axf" - 0 Error(s), 6 Warning(s).
-Build Time Elapsed:  00:00:01
+"..\OBJ\OLED.axf" - 0 Error(s), 12 Warning(s).
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

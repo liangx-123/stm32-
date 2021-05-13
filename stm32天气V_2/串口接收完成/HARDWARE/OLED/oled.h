@@ -67,7 +67,7 @@ void IIC_Stop();
 void Write_IIC_Command(unsigned char IIC_Command);
 void Write_IIC_Data(unsigned char IIC_Data);
 void Write_IIC_Byte(unsigned char IIC_Byte);
-
+void KEY_Init();
 void IIC_Wait_Ack();
 #endif  
 	 
