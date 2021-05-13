@@ -28,9 +28,14 @@
 extern u8 RX_buffer[tbuf];
 extern u8 RX_num;				 //接收计数变量
 int iii=0,i=0;
-char aa[150];
+u8 wendu[5];
+u8 shishiwendu[5];
+u8 shishishidu[5];
+u8 aa[5];
+u8 month[5];
+u8 day[5];
  int main(void)
-  {	u8 t;
+  {	
 			 //串口初始化为9600  
 		delay_init();	    	 //延时函数初始化	  
 		NVIC_Configuration(); 	 //设置NVIC中断分组2:2位抢占优先级，2位响应优先级 	LED_Init();			     //LED端口初始化
@@ -41,13 +46,8 @@ OLED_Clear()  	;
 			
 		delay_ms(400);
 		myuart(115200);
-		t=' ';
 
-//		OLED_ShowCHinese(54,0,3);//电
-//		OLED_ShowCHinese(72,0,4);//子
-//		OLED_ShowCHinese(90,0,5);//科
-//		OLED_ShowCHinese(108,0,6);//技		
-
+//aa[]数组 0天气代码 12温度  34实时温度 56 实时湿度
 	while(1) 
 	{		
 		
@@ -58,67 +58,67 @@ aa[0]=RX_buffer[i+13];//拿到天气代码
 				
 					}
 					if(RX_buffer[i]=='r'&&RX_buffer[i+1]=='e'){
-aa[1]=RX_buffer[i+4];
-						aa[2]=RX_buffer[i+5];
+wendu[0]=RX_buffer[i+4];
+						wendu[1]=RX_buffer[i+5];
   
 
 		}
 						if(RX_buffer[i]=='T'&&RX_buffer[i+1]=='T'){
-aa[3]=RX_buffer[i+3];
-						aa[4]=RX_buffer[i+4];
+shishiwendu[0]=RX_buffer[i+3];
+						shishiwendu[1]=RX_buffer[i+4];
   
 
 		}
 							if(RX_buffer[i]=='H'&&RX_buffer[i+1]=='H'){
-aa[5]=RX_buffer[i+3];
-						aa[6]=RX_buffer[i+4];
+shishishidu[0]=RX_buffer[i+3];
+						shishishidu[1]=RX_buffer[i+4];
   
 
 		}
-				Uart1SendStr(aa) ;
-		OLED_ShowString(8,2,aa,7);}
-//		
-//		for(i=0;i<50;i++){
-//aa[i]=RX_buffer[i];
+								if(RX_buffer[i]=='t'&&RX_buffer[i+1]=='e'&&RX_buffer[i+4]=='2'){
+month[0]=RX_buffer[i+9];
+						month[1]=RX_buffer[i+10];
+									day[0]=RX_buffer[i+12];
+						day[1]=RX_buffer[i+13];
+  
 
-//		}
-	//	Uart1SendStr(RX_buffer) ;	
-		
-//		OLED_Clear();
+		}
+					
+				}
+				OLED_ShowString(0,0,"2021",16);  // 2021
+				OLED_ShowCHinese(32,0,0);//年
+				OLED_ShowString(48,0,month,16); // 05
+				OLED_ShowCHinese(64,0,1);//月
+				OLED_ShowString(80,0,day,16); // 13
+				OLED_ShowCHinese(96,0,2);//日
+				
+					OLED_ShowCHinese(0,2,3);/*江苏南通*/
+				OLED_ShowCHinese(16,2,4);
+				OLED_ShowCHinese(32,2,5);
+				OLED_ShowCHinese(48,2,6);
+				OLED_ShowString(80,2,wendu,16); 
+				OLED_ShowString(96,2,"`C",16); 
+				
+			
+				
+				OLED_ShowCHinese(0,4,7);/*室内温度*/
+				OLED_ShowCHinese(16,4,8);
+				OLED_ShowCHinese(32,4,9);
+				OLED_ShowCHinese(48,4,10);
+				OLED_ShowString(80,4,shishiwendu,16);  
+				OLED_ShowString(96,4,"`C",16); 
+				
+				
+				
+						
+				OLED_ShowCHinese(0,6,7);/*室内湿度*/
+				OLED_ShowCHinese(16,6,8);
+				OLED_ShowCHinese(32,6,13);
+				OLED_ShowCHinese(48,6,14);
+				OLED_ShowString(80,6,shishishidu,16); 
+				OLED_ShowString(96,6,"%",16); 
+			
 
-//	OLED_ShowCHinese(54,0,1);//电
-//		OLED_ShowCHinese(72,0,2);//子
-//		OLED_ShowCHinese(90,0,3);//科
-//		OLED_ShowCHinese(108,0,4);//技
-//			OLED_ShowCHinese(38,0,0);//技
-//		
-
-//		
-	
-//		//OLED_ShowString(8,2,"ZHONGJINGYUAN");  
-//	 //	OLED_ShowString(20,4,"2014/05/01");  
-//		OLED_ShowString(0,6,"ASCII:",16);  
-//		OLED_ShowString(63,6,"CODE:",16);  
-//		OLED_ShowChar(48,6,t,16);//显示ASCII字符	   
-//		t++;
-//		if(t>'~')t=' ';
-//		OLED_ShowNum(103,6,t,3,16);//显示ASCII字符的码值 	
-//			delay_ms(8000);
-//		delay_ms(8000);
-
-//					delay_ms(8000);
-//		delay_ms(8000);
-////		delay_ms(8000);
-//		OLED_DrawBMP(0,0,128,8,BMP2);  //图片显示(图片显示慎用，生成的字表较大，会占用较多空间，FLASH空间8K以下慎用)
-//		delay_ms(8000);
-//					delay_ms(8000);
-//		delay_ms(8000);
-//		delay_ms(8000);
-//		OLED_DrawBMP(0,0,128,8,BMP2);
-//		delay_ms(8000);
-//					delay_ms(8000);
-//		delay_ms(8000);
-//		delay_ms(8000);
 	}	  
 	
 }
