@@ -37,6 +37,7 @@ int main(void)
     //aa[]数组 0天气代码 12温度  34实时温度 56 实时湿度
     while (1)
     {
+			  delay_ms(40);
         if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 0)
         {
 
@@ -44,6 +45,7 @@ int main(void)
             delay_ms(10000);
             OLED_Clear();
         }
+				delay_ms(40);
         for (i = 0; i < 1500; i++)
         {
             if (RX_buffer[i] == 'o' && RX_buffer[i + 1] == 'w')
